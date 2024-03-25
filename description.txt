@@ -1,0 +1,3 @@
+this is a Calculator GUI app
+built using tkinter in python
+By Alli Oluwaseun   
