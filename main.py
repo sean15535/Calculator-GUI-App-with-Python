@@ -59,6 +59,9 @@ def calculate():
     figures.delete(0, END)
     figures.insert(END, result)
 
+def clear():
+    figures.delete(0, END)
+
 
 window = Tk()
 window.minsize(width=500, height=500)
@@ -109,7 +112,10 @@ button_divide.pack()
 button_multiply = Button(window, text="*", command=button_multiply_click)
 button_multiply.pack()
 
-button_answer = Button(window, text="=", command=calculate)
+button_answer = Button(window, text="=", command=calculate, width=20)
 button_answer.pack()
+
+button_clear = Button(window, text="Clear", command=clear)
+button_clear.pack()
 
 window.mainloop()
