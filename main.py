@@ -53,6 +53,12 @@ def operation_click_response(operation):
     figures.delete(0, END)
     figures.insert(END, f"{expression} {operation} ")
 
+def calculate():
+    expression = figures.get()
+    result = eval(expression)  
+    figures.delete(0, END)
+    figures.insert(END, result)
+
 
 window = Tk()
 window.minsize(width=500, height=500)
@@ -102,5 +108,8 @@ button_divide.pack()
 
 button_multiply = Button(window, text="*", command=button_multiply_click)
 button_multiply.pack()
+
+button_answer = Button(window, text="=", command=calculate)
+button_answer.pack()
 
 window.mainloop()
