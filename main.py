@@ -27,11 +27,32 @@ def button_8_click_response():
 def button_9_click_response():
     button_click_response('9')
 
-def button_4_click_response():
-    button_click_response('4')
+def button_0_click_response():
+    button_click_response('0')
+
+def button_operation_response():
+    button_click_response('0')
 
 def button_click_response(char):
     figures.insert(END, char)
+
+def button_add_click():
+    operation_click_response("+")
+
+def button_subtract_click():
+    operation_click_response("-")
+
+def button_divide_click():
+    operation_click_response("/")
+
+def button_multiply_click():
+    operation_click_response("*")
+
+def operation_click_response(operation):
+    expression = figures.get()
+    figures.delete(0, END)
+    figures.insert(END, f"{expression} {operation} ")
+
 
 window = Tk()
 window.minsize(width=500, height=500)
@@ -54,5 +75,32 @@ button_4.pack()
 
 button_5 = Button(window, text="5", command=button_5_click_response)
 button_5.pack()
+
+button_6 = Button(window, text="6", command=button_6_click_response)
+button_6.pack()
+
+button_7 = Button(window, text="7", command=button_7_click_response)
+button_7.pack()
+
+button_8 = Button(window, text="8", command=button_8_click_response)
+button_8.pack()
+
+button_9 = Button(window, text="9", command=button_9_click_response)
+button_9.pack()
+
+button_0 = Button(window, text="0", command=button_0_click_response)
+button_0.pack()
+
+button_addition = Button(window, text="+", command=button_add_click)
+button_addition.pack()
+
+button_subtract = Button(window, text="-", command=button_subtract_click)
+button_subtract.pack()
+
+button_divide = Button(window, text="/", command=button_divide_click)
+button_divide.pack()
+
+button_multiply = Button(window, text="*", command=button_multiply_click)
+button_multiply.pack()
 
 window.mainloop()
